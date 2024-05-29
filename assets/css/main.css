@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+  list-style: none;
+  font-weight: 400;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.project-row {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  border-bottom: 1px solid black;
+  padding: 1rem;
+}
+
+.project-row:first-child {
+  border-top: 1px solid black;
+}
+
+.projects-table img {
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+  display: block;
+}

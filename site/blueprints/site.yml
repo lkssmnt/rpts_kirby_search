@@ -1,0 +1,6 @@
+title: Site
+
+sections:
+  pages:
+    label: Meine Seiten
+    type: pages

@@ -1,0 +1,40 @@
+sections:
+  content:
+    type: fields
+    fields:
+      semester:
+        type: toggles
+        label: Sommer- oder Wintersemester?
+        width: 1/2
+        options:
+          - Winter
+          - Sommer
+      year:
+        type: number
+        width: 1/2
+        min: 2000
+        max: 2026
+      author:
+        type: pages
+        label: Author
+      previewimage:
+        type: files
+        max: 1
+      gallery:
+        type: files
+      text:
+        type: textarea
+      course:
+        type: pages
+        label: Course
+      technology:
+        type: text
+      Awards:
+        type: text
+      technology:
+        type: text
+      genre:
+        type: tags
+      supervision:
+        type: pages
+        label: Supervision
