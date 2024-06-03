@@ -23,7 +23,7 @@
 
 </div>
 
-<div class="projects-table">
+<div class="projects-table">c
   <?php foreach($projects as $project): ?>
     <a href="<?= $project->url() ?>" class="project-row">
       <p><?= $project->title() ?></p>

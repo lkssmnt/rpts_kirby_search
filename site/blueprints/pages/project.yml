@@ -22,6 +22,8 @@ sections:
         max: 1
       gallery:
         type: files
+      videos:
+        type: files      
       text:
         type: textarea
       course:

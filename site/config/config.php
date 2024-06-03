@@ -11,7 +11,7 @@ return [
       'pattern' => 'search',
       'action' => function() {
         $query = get("q");
-        $results = site()->search($query, "title");
+        $results = site()->bettersearch($query, "title");
 
         $data = [];
 

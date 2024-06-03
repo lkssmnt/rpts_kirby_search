@@ -4,8 +4,50 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0b66e067a3ca3ac8468c1523d6e5c145",
+    "content-hash": "0998f7d090d0bd02a6d3ac58908b7e50",
     "packages": [
+        {
+            "name": "bvdputte/kirby-bettersearch",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bvdputte/kirby-bettersearch.git",
+                "reference": "323616a4898331a9fa938840999c76cf77d05f06"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bvdputte/kirby-bettersearch/zipball/323616a4898331a9fa938840999c76cf77d05f06",
+                "reference": "323616a4898331a9fa938840999c76cf77d05f06",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/composer-installer": "^1.1"
+            },
+            "type": "kirby-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bart Vandeputte",
+                    "email": "mail@bartvandeputte.be"
+                }
+            ],
+            "description": "A search plugin for Kirby (v3+ that searches for full word combinations rather than just individual words.",
+            "keywords": [
+                "kirby3",
+                "kirby3-plugin",
+                "kirby4",
+                "kirby4-plugin",
+                "search"
+            ],
+            "support": {
+                "issues": "https://github.com/bvdputte/kirby-bettersearch/issues",
+                "source": "https://github.com/bvdputte/kirby-bettersearch/tree/2.0.2"
+            },
+            "time": "2023-12-03T16:30:02+00:00"
+        },
         {
             "name": "christian-riesen/base32",
             "version": "1.6.0",
