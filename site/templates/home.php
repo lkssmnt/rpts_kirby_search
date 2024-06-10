@@ -1,34 +1,27 @@
 <?php snippet("header") ?>
 
 <?php
-  $projects = $site->find("projects")->children();
+  $projects = $site->find("projekte")->children();
   $searchedProjects = $projects->search("EXPO", "title|text");
 ?>
 
-<h1><?= $page->title() ?></h1>
-
-<!-- PHP Form Submission -->
-<?php /*
-<form id="search-form" action="/search" method="GET">
-  <input id="search-input" type="text" name="q" placeholder="search">
-  <button type="submit">Search</button>
-  </form>
-  */ ?>
-
-<!-- JavaScript Fetch Search -->
-<input id="search-input" type="text" name="q" placeholder="search">
-
-
-<div class="results-table">
+<h1 style="margin-bottom: 1rem;"><?= $site->title() ?></h1>
 
 </div>
 
-<div class="projects-table">c
-  <?php foreach($projects as $project): ?>
-    <a href="<?= $project->url() ?>" class="project-row">
-      <p><?= $project->title() ?></p>
-    </a>
-  <?php endforeach ?>
+<div class="projects-table">
+  <div class="table-header-row">
+    <p class="sort-btn sort-projects-btn" data-sort-type="project"><span class="arrow-span">⬇️</span> Projekt</p>
+    <p class="sort-btn sort-courses-btn" data-sort-type="course"><span class="arrow-span hidden">⬇️</span> Kurs</p>
+  </div>
+  <div class="projects-list" data-sort="project" data-sort-direction="desc">
+    <?php foreach($projects as $project): ?>
+      <div class="project-row">
+        <a class="project-title" href="<?= $project->url() ?>"><?= $project->title() ?></a>      
+        <a class="course-title" href="<?= $project->course()->isNotEmpty() ? $project->course()->toPage()->url() : '' ?>"><?= $project->course()->isNotEmpty() ? $project->course()->toPage()->title() : 'HIER GIBTS KEINEN KURS' ?></a>
+      </div>
+    <?php endforeach ?>
+  </div>
 </div>
 
 <?php snippet("footer") ?>
