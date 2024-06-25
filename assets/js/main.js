@@ -1,64 +1,60 @@
-const projectsList = document.querySelector('.projects-list');
-const projectTitleArr = [];
-
-sortTableBy(projectsList, 'course');
-
-
 function sortTableBy(tableElement, type, direction) {
 
-  const projectRowArr = Array.from(document.querySelectorAll('.project-row'));
+  const tableRowArr = Array.from(document.querySelectorAll(`#${tableElement.id} .table-row`));
 
-  projectRowArr.sort((a, b) => {
+  tableRowArr.sort((a, b) => {
     const titleA = a.querySelector(`.${type}-title`).textContent.toLowerCase();
     const titleB = b.querySelector(`.${type}-title`).textContent.toLowerCase();
     return titleA.localeCompare(titleB);
   });
 
   if(direction === 'asc') {
-    projectRowArr.reverse();
+    tableRowArr.reverse();
   }
 
-  projectsList.innerHTML = '';
+  tableElement.innerHTML = '';
 
-  projectRowArr.forEach((projectRow) => {
-    projectsList.appendChild(projectRow);
+  tableRowArr.forEach((projectRow) => {
+    tableElement.appendChild(projectRow);
   });
 
-  projectsList.setAttribute('data-sort', type);
+  tableElement.setAttribute('data-sort', type);
 }
 
 function initSortBtn(sortBtn) {
 
-  sortBtn.addEventListener('click', () => {
-    const sortType = sortBtn.getAttribute('data-sort-type');
+  const tableElement = document.getElementById(sortBtn.getAttribute('data-table-id'));
 
+  
+  sortBtn.addEventListener('click', () => {
     const arrowSpan = sortBtn.querySelector('.arrow-span');
     const allArrowSpans = document.querySelectorAll('.arrow-span');
     allArrowSpans.forEach((span) => {
       span.classList.add('hidden');
     });
-
+  
     arrowSpan.classList.remove('hidden');
-
-    const currentSortType = projectsList.getAttribute('data-sort');
-    const currentSortDirection = projectsList.getAttribute('data-sort-direction');
+    
+    const sortType = sortBtn.getAttribute('data-sort-type');    
+    const currentSortType = tableElement.getAttribute('data-sort');
+    const currentSortDirection = tableElement.getAttribute('data-sort-direction');
 
     if(currentSortType != sortType) {
-      sortTableBy(projectsList, sortType, 'desc')
-      projectsList.setAttribute('data-sort-direction', 'desc');
+      sortTableBy(tableElement, sortType, 'desc')
+      tableElement.setAttribute('data-sort-direction', 'desc');
     } else {
       if(currentSortDirection === 'desc') {
-        sortTableBy(projectsList, sortType, 'asc');
+        sortTableBy(tableElement, sortType, 'asc');
         arrowSpan.classList.add('rotate');
-        projectsList.setAttribute('data-sort-direction', 'asc');
+        tableElement.setAttribute('data-sort-direction', 'asc');
       } else {
-        sortTableBy(projectsList, sortType, 'desc');
+        sortTableBy(tableElement, sortType, 'desc');
         arrowSpan.classList.remove('rotate');
-        projectsList.setAttribute('data-sort-direction', 'desc');
+        tableElement.setAttribute('data-sort-direction', 'desc');
       }
     } 
 
-    projectsList.setAttribute('data-sort', sortType);
+    tableElement.setAttribute('data-sort', sortType);
   });
   
 }

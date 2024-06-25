@@ -13,7 +13,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.project-row, .table-header-row {
+.table-row, .table-header-row {
   /* display: flex;
   align-items: center;
   gap: .5rem;
@@ -31,7 +31,7 @@ body {
   text-transform: uppercase;
 }
 
-.project-row:first-child {
+.table-row:first-child {
   border-top: 1px solid black;
 }
 
